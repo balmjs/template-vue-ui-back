@@ -52,7 +52,7 @@ export default {
     tableAttrOrProp: getTableAttrOrProp(),
     tableDataFormat: {
       data: 'list',
-      total: ({ page }) => page.total,
+      total: ({ total }) => total,
       topActions: 'topbarActions'
     },
     pageSize: 50,

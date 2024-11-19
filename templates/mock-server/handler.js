@@ -1,7 +1,15 @@
-export function responseHandler(data) {
+export function responseHandler(data = {}) {
   return {
     code: 200,
-    message: 'mock data',
+    message: 'ok',
+    data
+  };
+}
+
+export function errorHandler(data = {}) {
+  return {
+    code: 401,
+    message: 'error',
     data
   };
 }

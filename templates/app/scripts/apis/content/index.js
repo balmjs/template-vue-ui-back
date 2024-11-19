@@ -1,3 +1,3 @@
-import articleApis from './article';
+import demoApis from './demo';
 
-export default [...articleApis];
+export default [...demoApis];

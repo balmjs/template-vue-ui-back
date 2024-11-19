@@ -1,6 +1,6 @@
 import '@mock-server';
 
-const MOCK = true;
+const MOCK = false;
 
 const useMock = () => MOCK;
 
@@ -10,3 +10,4 @@ export default {
   }
 };
 export { useMock };
+export const DEBUG = true; // 仅限独立调试本地服务器调试开发
