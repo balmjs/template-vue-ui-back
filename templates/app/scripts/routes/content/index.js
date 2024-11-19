@@ -1,3 +1,3 @@
-import articleRoutes from './article';
+import demoRoutes from './demo';
 
-export default [...articleRoutes];
+export default [...demoRoutes];

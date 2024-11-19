@@ -1,6 +1,6 @@
 import { useBus } from '@balm-ui';
 import { ROUTE_NAME } from '@/routes/config';
-import { DEBUG } from '@/config';
+import { DEBUG } from '@/plugins/mock';
 
 const $bus = useBus();
 
@@ -15,7 +15,11 @@ export default {
   methods: {
     async me() {
       if (!this.isAuthenticated) {
-        const user = await this.$getModel('user', {}, { loading: true });
+        const user = await this.$getModel(
+          'user',
+          {},
+          { loading: true, useMock: DEBUG }
+        );
 
         this.user = {};
         this.isAuthenticated = true;

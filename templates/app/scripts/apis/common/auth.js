@@ -1,4 +1,3 @@
-// http://gitlab.yiban.co/yiban/yiban_ai/wikis/admin
 export default [
   [
     'user',
@@ -7,7 +6,7 @@ export default [
     {
       crud: {
         read: {
-          '': 'userinfo'
+          '': 'me'
         },
         update: {
           login: 'login',
