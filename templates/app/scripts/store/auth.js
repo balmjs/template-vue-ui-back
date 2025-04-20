@@ -21,7 +21,7 @@ export default {
           { loading: true, useMock: DEBUG }
         );
 
-        this.user = {};
+        this.user = user;
         this.isAuthenticated = true;
       }
     },

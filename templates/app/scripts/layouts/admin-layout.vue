@@ -55,7 +55,10 @@
       </template>
 
       <div class="main-content">
-        <router-view></router-view>
+        <keep-alive>
+          <router-view v-if="keepAlive"></router-view>
+        </keep-alive>
+        <router-view v-if="!keepAlive" :key="routeKey"></router-view>
       </div>
 
       <page-loading v-if="$store.pageLoading" />
@@ -67,10 +70,23 @@
 </template>
 
 <script>
+import { generateRandomAlphaNum } from '@/utils';
+
 export default {
   computed: {
     hasLayout() {
       return !this.$route.meta?.noLayout;
+    },
+    routeKey() {
+      return this.$route.name + `-${generateRandomAlphaNum(8)}`;
+    },
+    keepAlive() {
+      const { name, matched } = this.$route;
+      const noKeepAlive =
+        matched.some((route) => route.meta?.keepAlive === false) ||
+        /.detail$/.test(name);
+      // console.warn('noKeepAlive', noKeepAlive);
+      return !noKeepAlive;
     }
   },
   beforeMount() {

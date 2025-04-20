@@ -1,4 +1,4 @@
-export const DEBUG = true; // 仅限本地调试使用
+export const DEBUG = false; // 仅限本地调试使用
 export const isDev = process.env.NODE_ENV === 'development';
 export const isProd = process.env.NODE_ENV === 'production';
 
