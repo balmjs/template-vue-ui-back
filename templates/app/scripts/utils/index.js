@@ -1,4 +1,4 @@
-export export function generateRandomAlphaNum(len) {
+export function generateRandomAlphaNum(len) {
   let rdmString = '';
   for (
     ;
